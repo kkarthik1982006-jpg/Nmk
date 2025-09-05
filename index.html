@@ -1,0 +1,307 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Karthik K - Portfolio</title>  
+  <style>  
+    /* ---------- General Reset ---------- */  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      font-family: 'Poppins', sans-serif;  
+    }  
+
+    body {  
+      background: linear-gradient(270deg,   
+        #ff9a9e, #fad0c4, #a18cd1, #fbc2eb,  
+        #84fab0, #8fd3f4, #f6d365, #fda085);  
+      background-size: 1600% 1600%;  
+      animation: gradientBG 30s ease infinite;  
+      color: #333;  
+      scroll-behavior: smooth;  
+      overflow-x: hidden;  
+    }  
+
+    @keyframes gradientBG {  
+      0% { background-position: 0% 50%; }  
+      50% { background-position: 100% 50%; }  
+      100% { background-position: 0% 50%; }  
+    }  
+
+    /* ---------- Header ---------- */  
+    header {  
+      text-align: center;  
+      padding: 80px 20px;  
+      color: white;  
+      animation: fadeDown 1.2s ease;  
+    }  
+
+    header h1 {  
+      font-size: 2.7rem;  
+      animation: fadeUp 1.5s ease;  
+    }  
+
+    header p {  
+      font-size: 1.2rem;  
+      margin-top: 8px;  
+      opacity: 0.9;  
+    }  
+
+    /* ---------- Navbar ---------- */  
+    nav {  
+      background: rgba(255, 255, 255, 0.9);  
+      backdrop-filter: blur(10px);  
+      display: flex;  
+      justify-content: center;  
+      padding: 15px;  
+      position: sticky;  
+      top: 0;  
+      z-index: 1000;  
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);  
+      border-radius: 0 0 20px 20px;  
+    }  
+
+    nav a {  
+      color: #333;  
+      text-decoration: none;  
+      margin: 0 20px;  
+      font-weight: bold;  
+      position: relative;  
+      transition: all 0.3s ease;  
+    }  
+
+    nav a::after {  
+      content: '';  
+      display: block;  
+      height: 3px;  
+      background: #6a11cb;  
+      width: 0;  
+      transition: width 0.3s;  
+      margin: auto;  
+      border-radius: 5px;  
+    }  
+
+    nav a:hover {  
+      color: #6a11cb;  
+      transform: scale(1.1);  
+    }  
+
+    nav a:hover::after {  
+      width: 100%;  
+    }  
+
+    /* ---------- Sections ---------- */  
+    section {  
+      padding: 70px 20px;  
+      max-width: 950px;  
+      margin: 50px auto;  
+      text-align: center;  
+      opacity: 0;  
+      transform: translateY(40px);  
+      transition: all 1s ease;  
+      background: rgba(255,255,255,0.9);  
+      border-radius: 20px;  
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);  
+    }  
+
+    section.visible {  
+      opacity: 1;  
+      transform: translateY(0);  
+    }  
+
+    section h2 {  
+      font-size: 2.2rem;  
+      margin-bottom: 20px;  
+      color: #6a11cb;  
+    }  
+
+    ul {  
+      list-style-type: none;  
+      font-size: 1.1rem;  
+      padding: 0;  
+    }  
+
+    ul li {  
+      margin: 10px 0;  
+    }  
+
+    /* ---------- Skills Progress ---------- */  
+    .skill {  
+      text-align: left;  
+      margin: 15px 0;  
+    }  
+
+    .skill span {  
+      font-weight: bold;  
+    }  
+
+    .progress {  
+      width: 100%;  
+      height: 12px;  
+      background: #ddd;  
+      border-radius: 10px;  
+      overflow: hidden;  
+      margin-top: 5px;  
+    }  
+
+    .progress-bar {  
+      height: 12px;  
+      width: 0;  
+      background: linear-gradient(135deg, #6a11cb, #2575fc);  
+      border-radius: 10px;  
+      transition: width 2s ease;  
+    }  
+
+    /* ---------- Button ---------- */  
+    .btn {  
+      display: inline-block;  
+      margin: 15px 10px;  
+      padding: 12px 25px;  
+      background: linear-gradient(135deg, #6a11cb, #2575fc);  
+      color: white;  
+      border-radius: 30px;  
+      text-decoration: none;  
+      transition: all 0.3s ease;  
+      box-shadow: 0 5px 15px rgba(106,17,203,0.4);  
+    }  
+
+    .btn:hover {  
+      background: linear-gradient(135deg, #2575fc, #6a11cb);  
+      transform: translateY(-4px) scale(1.05);  
+      box-shadow: 0 8px 20px rgba(37,117,252,0.5);  
+    }  
+
+    /* ---------- Animations ---------- */  
+    @keyframes fadeDown {  
+      from { opacity: 0; transform: translateY(-50px); }  
+      to { opacity: 1; transform: translateY(0); }  
+    }  
+
+    @keyframes fadeUp {  
+      from { opacity: 0; transform: translateY(50px); }  
+      to { opacity: 1; transform: translateY(0); }  
+    }  
+
+    @keyframes popIn {  
+      0% { transform: scale(0); opacity: 0; }  
+      100% { transform: scale(1); opacity: 1; }  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <h1>Karthik K</h1>  
+    <p>B.Sc Computer Science | Web Developer</p>  
+  </header>  
+
+  <nav>  
+    <a href="#about">About</a>  
+    <a href="#education">Education</a>  
+    <a href="#skills">Skills</a>  
+    <a href="#projects">Projects</a>  
+    <a href="#certificates">Certificates</a>  
+    <a href="#resume">Resume</a>  
+    <a href="#contact">Contact</a>  
+  </nav>  
+
+  <section id="about">  
+    <h2>About Me</h2>  
+    <p>Hi, I’m Karthik K, a passionate Computer Science undergraduate currently pursuing my B.Sc. in Computer Science (2nd year). I have a keen interest in Web Development and enjoy building creative and user-friendly websites.</p>  
+  </section>  
+
+  <section id="education">  
+    <h2>Education</h2>  
+    <ul>  
+      <li>SSLC - Government Boys Higher Secondary School, Avinashi</li>  
+      <li>HSC - Government Boys Higher Secondary School, Avinashi</li>  
+      <li>B.Sc Computer Science - Government Arts & Science College, Avinashi</li>  
+    </ul>  
+  </section>  
+
+  <section id="skills">  
+    <h2>Skills</h2>  
+    <div class="skill">  
+      <span>C - 90%</span>  
+      <div class="progress"><div class="progress-bar" data-skill="90%"></div></div>  
+    </div>  
+    <div class="skill">  
+      <span>C++ - 85%</span>  
+      <div class="progress"><div class="progress-bar" data-skill="85%"></div></div>  
+    </div>  
+    <div class="skill">  
+      <span>Python - 80%</span>  
+      <div class="progress"><div class="progress-bar" data-skill="80%"></div></div>  
+    </div>  
+    <div class="skill">  
+      <span>HTML - 95%</span>  
+      <div class="progress"><div class="progress-bar" data-skill="95%"></div></div>  
+    </div>  
+    <div class="skill">  
+      <span>CSS - 90%</span>  
+      <div class="progress"><div class="progress-bar" data-skill="90%"></div></div>  
+    </div>  
+    <div class="skill">  
+      <span>JavaScript - 75%</span>  
+      <div class="progress"><div class="progress-bar" data-skill="75%"></div></div>  
+    </div>  
+  </section>  
+
+  <section id="projects">  
+    <h2>Projects</h2>  
+    <ul>  
+      <li><strong>Portfolio Website:</strong> Personal responsive portfolio with animations.</li>  
+    </ul>  
+  </section>  
+
+  <!-- ---------- Certificates Section ---------- -->
+  <section id="certificates">  
+    <h2>Certificates</h2>  
+    <div class="certificate">  
+      <p><strong>Naan Mudhalvan</strong> - Overview of English Language Communication</p>  
+    </div>  
+    <div class="certificate">  
+      <p><strong>MongoDB</strong> - Introduction to MongoDB for Students</p>  
+    </div>  
+  </section>  
+
+  <!-- ---------- Resume Section ---------- -->  
+  <section id="resume">  
+    <h2>Resume</h2>  
+    <p>You can view or download my resume here:</p>  
+    <a href="resume.pdf" class="btn" target="_blank">📄 View Resume</a>  
+    <a href="resume.pdf" class="btn" download>⬇️ Download Resume</a>  
+  </section>  
+
+  <section id="contact">  
+    <h2>Contact Me</h2>  
+    <p>Email: <a href="mailto:k.karthik1982006@gmail.com">k.karthik1982006@gmail.com</a></p>  
+    <p>Phone: <a href="tel:+918825538053">+918825538053</a></p>  
+    <a href="https://github.com/" class="btn">GitHub</a>  
+    <a href="https://linkedin.com/" class="btn">LinkedIn</a>  
+  </section> 
+
+  <script>  
+    // Section fade-in effect  
+    const sections = document.querySelectorAll("section");  
+    const observer = new IntersectionObserver(entries => {  
+      entries.forEach(entry => {  
+        if (entry.isIntersecting) {  
+          entry.target.classList.add("visible");  
+
+          // Animate skill bars  
+          if (entry.target.id === "skills") {  
+            const bars = entry.target.querySelectorAll(".progress-bar");  
+            bars.forEach(bar => {  
+              bar.style.width = bar.getAttribute("data-skill");  
+            });  
+          }  
+        }  
+      });  
+    }, { threshold: 0.2 });  
+
+    sections.forEach(section => observer.observe(section));  
+  </script>  
+</body>  
+</html>
